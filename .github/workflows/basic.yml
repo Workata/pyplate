@@ -17,12 +17,14 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements/dev.txt
 
-      working-directory: src
-
     - name: Format with Black
+      working-directory: src
       run: black .
+
     - name: Lint with flake8
+      working-directory: src
       run: flake8
+
     - name: Test with PyTest
+      working-directory: src
       run: python -m pytest
-      working-directory: backend
