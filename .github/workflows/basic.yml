@@ -15,7 +15,6 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        echo | pwd
         pip install -r requirements/dev.txt
 
     - name: Format with Black

@@ -25,6 +25,14 @@ pip install -r ./requirements/dev.txt
 python3 ./src/main.py
 ```
 
+### Format code
+
+* Formatter (black)
+```sh
+cd ./src/
+black .
+```
+
 ### Test code
 
 * Linter (flake8)
