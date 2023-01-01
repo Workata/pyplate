@@ -17,6 +17,9 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements/dev.txt
 
+    - name: Check typing with mypy
+      run: mypy ./src/
+
     - name: Format with Black
       working-directory: src
       run: black .

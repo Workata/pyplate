@@ -35,6 +35,11 @@ black .
 
 ### Test code
 
+* Type checker (mypy)
+```sh
+mypy ./src/
+```
+
 * Linter (flake8)
 ```sh
 cd ./src/
