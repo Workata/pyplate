@@ -5,6 +5,13 @@ Template for a standard python project using github's CI/CD and devcontainers (V
 
 ### Setup project
 
+* Create/copy config file:
+```sh
+cp config_example.json config.json
+```
+
+* Change config settings if needed
+
 * Create venv
 ```sh
 python3 -m venv ./venv
@@ -29,8 +36,7 @@ python3 ./src/main.py
 
 * Formatter (black)
 ```sh
-cd ./src/
-black .
+black ./src/
 ```
 
 ### Test code
@@ -42,8 +48,7 @@ mypy ./src/
 
 * Linter (flake8)
 ```sh
-cd ./src/
-flake8
+flake8 ./src/
 ```
 
 * Unit tests (pytest)

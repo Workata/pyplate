@@ -5,16 +5,18 @@
 	"customizations": {
 	  "vscode": {
 		"extensions": [
-		  "ms-python.python",
-		  "ms-python.vscode-pylance",
-		  "ms-python.black-formatter",
-		  "aaron-bond.better-comments",
-		  "mechatroner.rainbow-csv",
-		  "eamodio.gitlens",
-		  "ms-toolsai.jupyter",
-		  "ms-mssql.mssql",
-		  "ms-azuretools.vscode-docker",
-		  "esbenp.prettier-vscode"
+			"ms-python.python",
+			"ms-python.vscode-pylance",
+			"ms-python.black-formatter",
+			"aaron-bond.better-comments",
+			"mechatroner.rainbow-csv",
+			"eamodio.gitlens",
+			"ms-toolsai.jupyter",
+			"ms-mssql.mssql",
+			"ms-azuretools.vscode-docker",
+			"esbenp.prettier-vscode",
+			"redhat.vscode-yaml",
+			"shd101wyy.markdown-preview-enhanced"
 		]
 	  }
 	},

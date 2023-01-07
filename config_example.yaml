@@ -1,0 +1,10 @@
+instance_file_path: ./instances/example1.txt
+conf:
+  name: a
+  example_list_1: [a, b, c]
+  example_list_2:
+    - a
+    - b
+    - c
+
+
