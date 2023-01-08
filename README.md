@@ -7,7 +7,7 @@ Template for a standard python project using github's CI/CD and devcontainers (V
 
 * Create/copy config file:
 ```sh
-cp config_example.json config.json
+cp config_example.yaml config.yaml
 ```
 
 * Change config settings if needed
