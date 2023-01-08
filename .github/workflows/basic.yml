@@ -21,13 +21,10 @@ jobs:
       run: mypy ./src/
 
     - name: Format with Black
-      working-directory: src
-      run: black .
+      run: black ./src/
 
     - name: Lint with flake8
-      working-directory: src
-      run: flake8
+      run: flake8 ./src/
 
     - name: Test with PyTest
-      working-directory: src
-      run: python -m pytest
+      run: python3 -m pytest ./src/tests/
