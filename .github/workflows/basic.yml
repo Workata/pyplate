@@ -27,5 +27,4 @@ jobs:
       run: flake8 ./src/
 
     - name: Test with PyTest
-      working-directory: src
-      run: python -m pytest
+      run: python3 -m pytest ./src/tests/

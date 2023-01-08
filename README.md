@@ -53,6 +53,5 @@ flake8 ./src/
 
 * Unit tests (pytest)
 ```sh
-cd ./src/
-python -m pytest tests/
+python3 -m pytest ./src/tests/
 ```
