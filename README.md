@@ -55,3 +55,8 @@ flake8 ./src/
 ```sh
 python3 -m pytest ./src/tests/
 ```
+
+*Note: To format and test code with one command use:*
+```sh
+. ./scripts/run_checks.sh
+```
