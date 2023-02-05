@@ -7,6 +7,7 @@ WORKDIR /workspace
 
 # * install needed libs
 COPY requirements/ requirements/
+RUN pip install --upgrade pip
 RUN pip3 install -r requirements/dev.txt
 
 # * modify bashrc to setup custom cli
