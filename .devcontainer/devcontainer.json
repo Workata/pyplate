@@ -4,6 +4,9 @@
 	"service": "app",
 	"customizations": {
 	  "vscode": {
+		"settings": {
+			"jupyter.notebookFileRoot": "${workspaceFolder}"
+		},
 		"extensions": [
 			"ms-python.python",
 			"ms-python.vscode-pylance",
