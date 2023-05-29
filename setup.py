@@ -1,12 +1,12 @@
 from setuptools import setup
 
 setup(
-    name='basic-python-project-template',
+    name='app-name',
     version='0.0.1',
-    author='Jakub Tolsciuk',
+    author='author',
     description='This is a template project',
-    author_email='jakubtolsciuk@gmail.com',
-    url='https://github.com/Workata/basic-python-project-template',
+    author_email='author@gmail.com',
+    url='www.project-url.com',
     keywords='template, example',
     python_requires='>=3.11, <4',
     classifiers=[
