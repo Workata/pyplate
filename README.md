@@ -29,7 +29,7 @@ Update information about the project like Author, Description etc.
 
 ### Setup project
 
-This template uses devcontainer (VS code) to setup everyting. So just follow [official documentation](https://code.visualstudio.com/docs/devcontainers/tutorial) to meet prerequisites. Then open this folder in container (using VS code) and you are ready to code!
+This template project uses devcontainer (VS code) to setup everything. So just follow [official documentation](https://code.visualstudio.com/docs/devcontainers/tutorial) to meet prerequisites. Then open this template project in container (using VS code) and you are ready to code!
 
 ### Format code
 
@@ -52,7 +52,7 @@ flake8 ./src/
 
 * Unit tests (pytest)
 ```sh
-python3 -m pytest ./src/tests/
+pytest ./src/tests/
 ```
 
 *Note: To format and test code with one command use:*
