@@ -6,6 +6,8 @@ Dummy structure template for a simple (non-framework related) python project. Th
 
 ## Things you would want to replace/update
 
+First of all, find and replace all occurrences of 'app-name' to your project name phrase.
+
 ### setup.py
 
 Update information about the project like Author, Description etc.
