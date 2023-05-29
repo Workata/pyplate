@@ -29,32 +29,7 @@ Update information about the project like Author, Description etc.
 
 ### Setup project
 
-* Create/copy config file:
-```sh
-cp config_example.yaml config.yaml
-```
-
-* Change config settings if needed
-
-* Create venv
-```sh
-python3 -m venv ./venv
-```
-
-* Activate venv
-```sh
-. ./venv/bin/activate
-```
-
-* Install libs
-```sh
-pip install -r ./requirements/dev.txt
-```
-
-* Run program
-```py
-python3 ./src/main.py
-```
+This template uses devcontainer (VS code) to setup everyting. So just follow [official documentation](https://code.visualstudio.com/docs/devcontainers/tutorial) to meet prerequisites. Then open this folder in container (using VS code) and you are ready to code!
 
 ### Format code
 
