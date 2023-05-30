@@ -52,10 +52,10 @@ flake8 ./src/
 
 * Unit tests (pytest)
 ```sh
-pytest ./src/tests/
+pytest ./src/
 ```
 
 *Note: To format and test code with one command use:*
 ```sh
-. ./scripts/run_checks.sh
+./scripts/run_checks.sh
 ```
