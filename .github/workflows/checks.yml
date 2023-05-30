@@ -32,5 +32,5 @@ jobs:
     - name: Test with PyTest
       run: coverage run -m pytest ./src/
 
-    - name: check coverage with coverage.py
+    - name: Check coverage with coverage.py
       run: coverage report -m
