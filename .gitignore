@@ -1,6 +1,9 @@
 private/*
 config.yaml
 
+# coverage
+.coverage
+
 # vscode related settings - not needed because all settings should be declared in devcontainer
 .vscode
 
