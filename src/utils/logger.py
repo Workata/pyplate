@@ -3,6 +3,10 @@ from datetime import date, datetime
 
 
 class Logger:
+    """
+    Use python built in logger instead:
+    https://docs.python.org/3/library/logging.html
+    """
 
     LOGS_ROOT_FOLDER = "logs"
 

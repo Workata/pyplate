@@ -13,21 +13,25 @@
 			"python.testing.pytestEnabled": true
 		},
 		"extensions": [
+			// python related
 			"ms-python.python",
 			"ms-python.vscode-pylance",
 			"ms-python.black-formatter",
 			"ms-python.isort",
 
+			// formatting / highlighting
 			"aaron-bond.better-comments",
 			"mechatroner.rainbow-csv",
 			"redhat.vscode-yaml",
+			"esbenp.prettier-vscode",
 
-			"eamodio.gitlens",
+			// tools
 			"ms-toolsai.jupyter",
 			"ms-mssql.mssql",
 			"ms-azuretools.vscode-docker",
-			"esbenp.prettier-vscode",
-			"yzhang.markdown-all-in-one"
+			"eamodio.gitlens",
+			"yzhang.markdown-all-in-one",
+			"GitHub.vscode-github-actions"
 		]
 	  }
 	},

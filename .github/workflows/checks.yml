@@ -30,4 +30,7 @@ jobs:
       run: flake8 ./src/
 
     - name: Test with PyTest
-      run: pytest ./src/tests/
+      run: coverage run -m pytest ./src/
+
+    - name: check coverage with coverage.py
+      run: coverage report -m
