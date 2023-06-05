@@ -3,10 +3,8 @@ omit =
         *__init__*,
         *test*,
         */usr/*,
-        logger.py,
         main.py
 
-# logger.py should be replaced by python built in logging module
 # main.py should be tested if there is a proper logic in there (currently it's a "placeholder")
 
 [report]
