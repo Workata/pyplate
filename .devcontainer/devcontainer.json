@@ -35,5 +35,6 @@
 		]
 	  }
 	},
+	"postStartCommand": "cp -n .env.example .env",
 	"overrideCommand": true
   }

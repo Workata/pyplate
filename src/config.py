@@ -2,6 +2,7 @@ from pydantic import BaseSettings
 from typing import Dict, Any
 
 
+# fmt: off
 class Settings(BaseSettings):
     environment: str
 
@@ -10,11 +11,11 @@ class Settings(BaseSettings):
         "disable_existing_loggers": False,
         "formatters": {
             "verbose": {
-                "format": "{levelname} {asctime} {module} {process:d} {thread:d} {message}",
+                "format": "[{levelname}][{asctime}] {message}",
                 "style": "{",
             },
             "simple": {
-                "format": "{levelname} {message}",
+                "format": "[{levelname}] {message}",
                 "style": "{",
             },
         },
@@ -27,19 +28,21 @@ class Settings(BaseSettings):
                 "class": "logging.FileHandler",
                 "filename": "./logs/all.log",
                 "formatter": "verbose"
-            }
+            },
         },
         "loggers": {
             "general": {
-                "handlers": ["console", "file"]
+                "handlers": ["console", "file"],
+                "level": "INFO",
             }
-        }
+        },
     }
 
     class Config:
         env_file = ".env"
         env_file_encoding = "utf-8"
+# fmt: on
 
 
 def get_settings() -> Settings:
-    return Settings()  # type: ignore
+    return Settings()
