@@ -10,7 +10,13 @@
 				"."
 			],
 			"python.testing.unittestEnabled": false,
-			"python.testing.pytestEnabled": true
+			"python.testing.pytestEnabled": true,
+			"editor.rulers": [
+				{
+					"column": 120,
+					"color": "#5b5858"
+				}
+			]
 		},
 		"extensions": [
 			// python related
