@@ -1,18 +1,24 @@
-# basic-python-project-template
+# pyplate
 Template for a standard python project using github's CI/CD and devcontainers (VS code)
 
 ## About the project
 Dummy structure template for a simple (non-framework related) python project. The point of this repo is to have a basic devcontainer and CI/CD setup. It should be later on adjusted according to the needs of specific project.
 
-## Things you would want to replace/update
+### Integrated tools
 
-First of all, find and replace all occurrences of 'app-name' to your project name phrase.
+- **[black](https://black.readthedocs.io/en/stable/)** (formatter)
+- **[flake8](https://flake8.pycqa.org/en/latest/)** (linter)
+- **[mypy](https://mypy.readthedocs.io/en/stable/)** (type checker)
+- **[pytest](https://docs.pytest.org/en/7.1.x/contents.html)** (unit tests)
+- **[pre-commit](https://pre-commit.com/)**
+- **[devcontainer](https://code.visualstudio.com/docs/devcontainers/containers)**
 
-### setup.py
+## TODOs for developer after using this template
 
-Update information about the project like Author, Description etc.
+- [ ] Find and replace all occurrences of 'app-name' to your project name phrase.
+- [ ] Open `setup.py` and update information about the project like Author, Description etc.
+- [ ] Adjust (remove/add) tools and related configs according to your needs
 
-<!-- Linter/Formatter/Tests--->
 
 ## Things you would want to add
 
@@ -20,42 +26,42 @@ Update information about the project like Author, Description etc.
 
 [Poetry](https://python-poetry.org/) can help you with packaging and dependency management.
 
-<!-- ### CI/CD
 
-#### Linter -->
+<!-- ## Development -->
 
+## Setup project
 
-## Development
-
-### Setup project
-
+####  With devcontainer (recommended)
 This template project uses devcontainer (VS code) to setup everything. So just follow [official documentation](https://code.visualstudio.com/docs/devcontainers/tutorial) to meet prerequisites. Then open this template project in container (using VS code) and you are ready to code!
 
-### Format code
+#### Without devcontainer
 
-* Formatter (black)
+Copy env file
 ```sh
-black ./src/
+cp -n .env.example .env
 ```
 
-### Test code
-
-* Type checker (mypy)
+Create new venv
 ```sh
-mypy ./src/
+python3 -m venv ./venv
 ```
 
-* Linter (flake8)
+Install needed requirements
 ```sh
-flake8 ./src/
+pip install -r requirements/dev.txt
 ```
 
-* Unit tests (pytest)
+Run unit tests to check if it works
 ```sh
 pytest ./src/
 ```
 
-*Note: To format and test code with one command use:*
+
+
+## Test code
+
+On every commit code should be static tested/checked/formatted automatically (using [pre-commit](https://pre-commit.com/) tool). If you want to run static tests + unit tests run:
+
 ```sh
-./scripts/run_checks.sh
+./scripts/run_tests.sh
 ```
