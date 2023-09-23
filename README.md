@@ -1,4 +1,8 @@
-# pyplate
+<p align="center">
+  <img src="imgs/pyplate_logo.png" width="290" height="290" alt="pyplate logo"/>
+</p>
+
+
 Template for a standard python project using github's CI/CD and devcontainers (VS code)
 
 ## About the project
