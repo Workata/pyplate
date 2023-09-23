@@ -1,4 +1,4 @@
-# basic-python-project-template
+# pyplate
 Template for a standard python project using github's CI/CD and devcontainers (VS code)
 
 ## About the project
@@ -31,31 +31,10 @@ Update information about the project like Author, Description etc.
 
 This template project uses devcontainer (VS code) to setup everything. So just follow [official documentation](https://code.visualstudio.com/docs/devcontainers/tutorial) to meet prerequisites. Then open this template project in container (using VS code) and you are ready to code!
 
-### Format code
-
-* Formatter (black)
-```sh
-black ./src/
-```
-
 ### Test code
 
-* Type checker (mypy)
-```sh
-mypy ./src/
-```
+On every commit code should be static tested/checked/formatted automatically (using [pre-commit](https://pre-commit.com/) tool). If you want to run static tests + unit tests run:
 
-* Linter (flake8)
 ```sh
-flake8 ./src/
-```
-
-* Unit tests (pytest)
-```sh
-pytest ./src/
-```
-
-*Note: To format and test code with one command use:*
-```sh
-./scripts/run_checks.sh
+./scripts/run_tests.sh
 ```
