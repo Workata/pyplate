@@ -72,7 +72,7 @@ pre-commit install
 
 ## Test code
 
-On every commit code should be static tested/checked/formatted automatically (using [pre-commit](https://pre-commit.com/) tool). Nonetheless if you want to run static tests + unit tests manually then run:
+On every commit code should be static tested/checked/formatted automatically (using [pre-commit](https://pre-commit.com/) tool). If you want to run static tests + unit tests then run:
 
 ```sh
 ./scripts/run_tests.sh
