@@ -14,6 +14,7 @@ Dummy structure template for a simple (non-framework related) python project. Th
 - **[flake8](https://flake8.pycqa.org/en/latest/)** (linter)
 - **[mypy](https://mypy.readthedocs.io/en/stable/)** (type checker)
 - **[pytest](https://docs.pytest.org/en/7.1.x/contents.html)** (unit tests)
+- **[pur](https://github.com/alanhamlett/pip-update-requirements)** (package updater)
 - **[pre-commit](https://pre-commit.com/)**
 - **[devcontainer](https://code.visualstudio.com/docs/devcontainers/containers)**
 
@@ -35,10 +36,10 @@ Dummy structure template for a simple (non-framework related) python project. Th
 
 ## Setup project
 
-####  With devcontainer (recommended)
+####  Setup with devcontainer (recommended)
 This template project uses devcontainer (VS code) to setup everything. So just follow [official documentation](https://code.visualstudio.com/docs/devcontainers/tutorial) to meet prerequisites. Then open this template project in container (using VS code) and you are ready to code!
 
-#### Without devcontainer
+#### Setup without devcontainer
 
 Copy env file
 ```sh
@@ -60,11 +61,18 @@ Run unit tests to check if it works
 pytest ./src/
 ```
 
+#### Pre-commit
+[Pre-commit](https://pre-commit.com/) configuration is enabled for this project. To add the hook run the following command:
+
+```sh
+pre-commit install
+```
+
 
 
 ## Test code
 
-On every commit code should be static tested/checked/formatted automatically (using [pre-commit](https://pre-commit.com/) tool). If you want to run static tests + unit tests run:
+On every commit code should be static tested/checked/formatted automatically (using [pre-commit](https://pre-commit.com/) tool). If you want to run static tests + unit tests then run:
 
 ```sh
 ./scripts/run_tests.sh
