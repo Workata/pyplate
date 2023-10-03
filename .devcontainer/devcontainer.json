@@ -41,6 +41,6 @@
 		]
 	  }
 	},
-	"postStartCommand": "cp -n .env.example .env",
+	"postStartCommand": "cp -n .env.example .env && git config --global --add safe.directory /workspace",
 	"overrideCommand": true
   }

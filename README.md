@@ -14,6 +14,7 @@ Dummy structure template for a simple (non-framework related) python project. Th
 - **[flake8](https://flake8.pycqa.org/en/latest/)** (linter)
 - **[mypy](https://mypy.readthedocs.io/en/stable/)** (type checker)
 - **[pytest](https://docs.pytest.org/en/7.1.x/contents.html)** (unit tests)
+- **[pydantic](https://docs.pydantic.dev/latest/)** (settings/configs)
 - **[pur](https://github.com/alanhamlett/pip-update-requirements)** (package updater)
 - **[pre-commit](https://pre-commit.com/)**
 - **[devcontainer](https://code.visualstudio.com/docs/devcontainers/containers)**
@@ -25,11 +26,13 @@ Dummy structure template for a simple (non-framework related) python project. Th
 - [ ] Adjust (remove/add) tools and related configs according to your needs
 
 
-## Things you would want to add
+## Other tools you would want to add
 
-### Poetry
+#### Poetry
 
 [Poetry](https://python-poetry.org/) can help you with packaging and dependency management.
+
+##### ...
 
 
 <!-- ## Development -->
@@ -51,6 +54,11 @@ Create new venv
 python3 -m venv ./venv
 ```
 
+Activate venv
+```sh
+. ./venv/bin/activate
+```
+
 Install needed requirements
 ```sh
 pip install -r requirements/dev.txt
@@ -68,12 +76,29 @@ pytest ./src/
 pre-commit install
 ```
 
-
-
 ## Test code
 
 On every commit code should be static tested/checked/formatted automatically (using [pre-commit](https://pre-commit.com/) tool). If you want to run static tests + unit tests then run:
 
 ```sh
 ./scripts/run_tests.sh
+```
+
+## Dockerize
+
+There are two Dockerfiles in this project.
+
+- `.devcontainer/Dockerfile`
+- `Dockerfile`
+
+First is for developing in a devcontainer and it's also used for running stuff in the pipeline. The second is for deploying the product as shown below. You should exclude unnecessary files (such as tests) using `.dockerignore` to keep the "production ready" container as ligthweight as possible.
+
+Build image
+```sh
+docker build . --tag app-image
+```
+
+Create container and run it
+```sh
+docker run app-image
 ```
