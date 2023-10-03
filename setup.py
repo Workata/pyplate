@@ -8,7 +8,7 @@ setup(
     author_email='author@gmail.com',
     url='www.project-url.com',
     keywords='template, example',
-    python_requires='>=3.11, <4',
+    python_requires='>=3.12, <4',
     classifiers=[
         'Programming Language :: Python :: 3',
         'License :: OSI Approved :: MIT License',
