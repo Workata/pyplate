@@ -84,6 +84,15 @@ On every commit code should be static tested/checked/formatted automatically (us
 ./scripts/run_tests.sh
 ```
 
+## Update packages
+You can manually run a script that will check for new versions of packages which are used in this project. It will update both requirements files (`base.txt`, `dev.txt`).
+
+```sh
+./scripts/update_packages.sh
+```
+
+On top of that there is a workflow added (`packages_update.yml`) that will create new Pull Request automatically with updated packages. Cronjob for this task is set for: `0 20 * * *` (every day - 20:00).
+
 ## Dockerize
 
 There are two Dockerfiles in this project.
