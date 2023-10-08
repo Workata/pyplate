@@ -11,8 +11,19 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.12
+
+      - name: Install package updater
+        run: |
+          python -m pip install --upgrade pip
+          pip install pur
+
       - name: Update packages
         run: ./scripts/update_packages.sh
+
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
         with:
