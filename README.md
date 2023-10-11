@@ -1,3 +1,5 @@
+![Workflow status](https://github.com/workata/pyplate/actions/workflows/checks.yml/badge.svg)
+
 <p align="center">
   <img src="imgs/pyplate_logo.png" width="290" height="290" alt="pyplate logo"/>
 </p>
