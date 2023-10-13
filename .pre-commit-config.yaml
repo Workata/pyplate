@@ -7,7 +7,9 @@ repos:
     rev: v3.2.0
     hooks:
     -   id: trailing-whitespace       # ? trims trailing whitespace
+        exclude: imgs/
     -   id: end-of-file-fixer         # ? ensures that a file is either empty, or ends with one newline
+        exclude: imgs/
     -   id: check-yaml                # ? checks yaml files for parseable syntax
     -   id: check-added-large-files   # ? check-added-large-files
     -   id: check-toml                # ? checks toml files for parseable syntax
