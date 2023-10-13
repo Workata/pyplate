@@ -3,6 +3,7 @@ assertpy==1.1
 black[jupyter]==23.9.1
 coverage==7.3.1
 flake8==6.1.0
+genbadge[all]==1.1.0
 mypy==1.5.1
 pre-commit==3.4.0
 pur==7.3.1
