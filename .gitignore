@@ -3,6 +3,9 @@ config.yaml
 
 *.log
 
+# auto generated reports that should be excluded from repo
+flake8stats.txt
+
 # coverage
 .coverage
 
