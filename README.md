@@ -7,10 +7,8 @@
 </p>
 
 
-Template for a standard python project using github's CI/CD and devcontainers (VS code)
-
 ## About the project
-Template for a standard (non-framework related) python project. The point of this repo is to have a basic devcontainer and CI/CD setup. It should be later on adjusted according to the needs of specific project.
+Template for a standard (non-framework related) python project. The point of this repo is to have a basic project layout with working CI/CD and a devcontainer setup. It should be later on adjusted according to the needs of specific project.
 
 ### Integrated tools
 
@@ -30,18 +28,9 @@ Template for a standard (non-framework related) python project. The point of thi
 - [ ] Adjust (remove/add) tools and related configs according to your needs
 
 
-## Other tools you would want to add
-
-#### Poetry
-
-[Poetry](https://python-poetry.org/) can help you with packaging and dependency management.
-
-##### ...
-
-
 <!-- ## Development -->
 
-## Setup project
+## Setup
 
 ####  Setup with devcontainer (recommended)
 This template project uses devcontainer (VS code) to setup everything. So just follow [official documentation](https://code.visualstudio.com/docs/devcontainers/tutorial) to meet prerequisites. Then open this template project in container (using VS code) and you are ready to code!
@@ -115,3 +104,10 @@ Create container and run it
 ```sh
 docker run app-image
 ```
+
+
+#### Other useful tools may want to add
+
+##### Poetry
+
+[Poetry](https://python-poetry.org/) can help you with packaging and dependency management.
