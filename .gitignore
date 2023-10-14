@@ -5,6 +5,7 @@ config.yaml
 
 # auto generated reports that should be excluded from repo
 flake8stats.txt
+junit.xml
 
 # coverage
 .coverage

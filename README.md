@@ -1,4 +1,5 @@
-![Workflow status](https://github.com/workata/pyplate/actions/workflows/checks.yml/badge.svg) <img src="imgs/badges/coverage.svg" alt="coverge-badge"/> <img src="imgs/badges/flake.svg" alt="flake-badge"/>
+![Workflow status](https://github.com/workata/pyplate/actions/workflows/checks.yml/badge.svg) <img src="imgs/badges/coverage.svg" alt="coverge-badge"/> <img src="imgs/badges/tests.svg" alt="pytest-badge"/> <img src="imgs/badges/flake.svg" alt="flake-badge"/> ![PyPlate stars](https://img.shields.io/github/stars/workata/pyplate)
+
 
 
 <p align="center">

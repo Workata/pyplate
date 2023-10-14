@@ -24,7 +24,7 @@ jobs:
       run: pre-commit run --all-files
 
     - name: Test with PyTest
-      run: coverage run -m pytest ./src/
+      run: coverage run -m pytest ./src/ --junitxml=junit.xml
 
     - name: Check coverage with coverage.py
       run: |
@@ -34,6 +34,7 @@ jobs:
     - name: Create badges and add them to repo
       run: |
         genbadge coverage --input-file=coverage.xml --output-file=imgs/badges/coverage.svg
+        genbadge tests --input-file=junit.xml --output-file=imgs/badges/tests.svg
         genbadge flake8 --input-file=flake8stats.txt --output-file=imgs/badges/flake.svg
 
         git config --global user.name "github-actions[bot]"
