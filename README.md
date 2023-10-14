@@ -1,4 +1,5 @@
-![Workflow status](https://github.com/workata/pyplate/actions/workflows/checks.yml/badge.svg) <img src="imgs/badges/coverage.svg" alt="coverge-badge"/>
+![Workflow status](https://github.com/workata/pyplate/actions/workflows/checks.yml/badge.svg) <img src="imgs/badges/coverage.svg" alt="coverge-badge"/> <img src="imgs/badges/tests.svg" alt="pytest-badge"/> <img src="imgs/badges/flake.svg" alt="flake-badge"/> ![PyPlate stars](https://img.shields.io/github/stars/workata/pyplate)
+
 
 
 <p align="center">
@@ -9,7 +10,7 @@
 Template for a standard python project using github's CI/CD and devcontainers (VS code)
 
 ## About the project
-Dummy structure template for a simple (non-framework related) python project. The point of this repo is to have a basic devcontainer and CI/CD setup. It should be later on adjusted according to the needs of specific project.
+Template for a standard (non-framework related) python project. The point of this repo is to have a basic devcontainer and CI/CD setup. It should be later on adjusted according to the needs of specific project.
 
 ### Integrated tools
 
