@@ -3,8 +3,8 @@ from setuptools import setup
 setup(
     name='app-name',
     version='0.0.1',
-    author='author',
-    description='This is a template project',
+    author='__author__',
+    description='__description__',
     author_email='author@gmail.com',
     url='www.project-url.com',
     keywords='template, example',
