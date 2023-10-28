@@ -1,4 +1,14 @@
-read -p "[Required] Enter project name (without whitespaces): " project_name
+unset project_name
+
+while read -p "[Required] Enter project name (without whitespaces): " project_name; do
+     if [[ -z "${project_name}" ]]; then        # check if its empty value
+          echo "Project name cannot be empty!"
+     else
+          echo "Creating ${project_name}..."
+          break
+     fi
+done
+
 read -p "[Optional] Enter author: " author
 read -p "[Optional] Enter short description: " description
 
