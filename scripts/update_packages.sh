@@ -1,4 +1,3 @@
-# TODO add args [base, dev]
 echo "Updating packages in requirements/base.txt file..."
 pur -r requirements/base.txt
 echo "Updating packages in requirements/dev.txt file..."
