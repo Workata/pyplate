@@ -1,6 +1,13 @@
 name: checks
 
-on: [push]
+on:
+  push:
+    paths-ignore:
+      - '**/README.md'
+      - 'scripts/*'
+      - 'imgs/*'
+      - 'LICENSE'
+      - '.env.example'
 
 jobs:
   checks:

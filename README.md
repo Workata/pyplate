@@ -21,21 +21,13 @@ Template for a standard (non-framework related) python project. The point of thi
 - **[pre-commit](https://pre-commit.com/)**
 - **[devcontainer](https://code.visualstudio.com/docs/devcontainers/containers)**
 
-## TODOs for developer after using this template
-
-- [ ] Find and replace all occurrences of 'app-name' to your project name phrase.
-- [ ] Open `setup.py` and update information about the project like Author, Description etc.
-- [ ] Adjust (remove/add) tools and related configs according to your needs
-
-
-<!-- ## Development -->
 
 ## Setup
 
-####  Setup with devcontainer (recommended)
+####  a) Setup with devcontainer (recommended)
 This template project uses devcontainer (VS code) to setup everything. So just follow [official documentation](https://code.visualstudio.com/docs/devcontainers/tutorial) to meet prerequisites. Then open this template project in container (using VS code) and you are ready to code!
 
-#### Setup without devcontainer
+#### b) Setup without devcontainer
 
 Copy env file
 ```sh
@@ -62,7 +54,22 @@ Run unit tests to check if it works
 pytest ./src/
 ```
 
-#### Pre-commit
+---
+
+#### Run setup script
+
+Run one-time setup script to do some adjustments
+```sh
+./scripts/setup_project.sh
+```
+
+If you are not using devcontainer or unix-like OS this script will not work so just do the following:
+
+- [ ] Find and replace all occurrences of 'app-name' to your project name phrase.
+- [ ] Open `setup.py` and update information about the project like Author, Description etc.
+- [ ] Adjust (remove/add) tools and related configs according to your needs
+
+#### *Optionally add pre-commit git hook*
 [Pre-commit](https://pre-commit.com/) configuration is enabled for this project. To add the hook run the following command:
 
 ```sh
@@ -104,10 +111,3 @@ Create container and run it
 ```sh
 docker run app-image
 ```
-
-
-#### Other useful tools may want to add
-
-##### Poetry
-
-[Poetry](https://python-poetry.org/) can help you with packaging and dependency management.
