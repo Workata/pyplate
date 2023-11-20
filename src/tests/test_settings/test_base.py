@@ -1,6 +1,8 @@
+from unittest import mock
+
 from assertpy import assert_that
+
 from settings import get_settings
-from settings.base import Settings
 from settings.components.logging import logging_settings
 
 
@@ -15,6 +17,8 @@ def test_settings_values(settings):
     assert_that(settings.logging).is_type_of(dict)
 
 
-def test_get_settings_should_return_settings():
+@mock.patch("settings.base.Settings")
+def test_get_settings_should_create_settings(mock_settings_cls):
     settings = get_settings()
-    assert_that(settings).is_type_of(Settings)
+    mock_settings_cls.assert_called_once_with()
+    assert_that(settings).is_equal_to(mock_settings_cls.return_value)
