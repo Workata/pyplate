@@ -30,8 +30,9 @@ repos:
         args: [--statistics, --tee, --output-file=flake8stats.txt]
 
 -   repo: https://github.com/pre-commit/mirrors-mypy
-    rev: 'v1.5.1'  # Use the sha / tag you want to point at
+    rev: 'v1.7.0'  # Use the sha / tag you want to point at
     hooks:
     -   id: mypy
         files: src/
+        exclude: ^src/tests/
         additional_dependencies: [types-PyYAML==6.0.12.11]

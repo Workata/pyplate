@@ -8,7 +8,7 @@
 
 
 ## About the project
-Template for a standard (non-framework related) python project. The point of this repo is to have a basic project layout with working CI/CD and a devcontainer setup. It should be later on adjusted according to the needs of specific project.
+Template for a standard (non-framework related) python project. The point of this repo is to have a basic project layout with working CI/CD, devcontainer and integrated common python tools. **It should be** later on **adjusted according to the needs** of specific project.
 
 ### Integrated tools
 
@@ -16,10 +16,11 @@ Template for a standard (non-framework related) python project. The point of thi
 - **[flake8](https://flake8.pycqa.org/en/latest/)** (linter)
 - **[mypy](https://mypy.readthedocs.io/en/stable/)** (type checker)
 - **[pytest](https://docs.pytest.org/en/7.1.x/contents.html)** (unit tests)
-- **[pydantic](https://docs.pydantic.dev/latest/)** (settings/configs)
+- **[pydantic](https://docs.pydantic.dev/latest/)** (data validation, models)
+- **[pydantic-settings](https://docs.pydantic.dev/latest/concepts/pydantic_settings/)** (settings management)
 - **[pur](https://github.com/alanhamlett/pip-update-requirements)** (package updater)
-- **[pre-commit](https://pre-commit.com/)**
-- **[devcontainer](https://code.visualstudio.com/docs/devcontainers/containers)**
+- **[pre-commit](https://pre-commit.com/)** (git hooks, running checks)
+- **[devcontainer](https://code.visualstudio.com/docs/devcontainers/containers)** (development inside container)
 
 
 ## Setup
