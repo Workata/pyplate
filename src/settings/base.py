@@ -1,7 +1,7 @@
 from functools import lru_cache
 from typing import Any, Dict
 
-from pydantic_settings import BaseSettings
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 from .components.logging import logging_settings
 
@@ -9,12 +9,9 @@ from .components.logging import logging_settings
 class Settings(BaseSettings):
     environment: str
     debug: bool
-
     logging: Dict[str, Any] = logging_settings
 
-    class Config:
-        env_file = ".env"
-        env_file_encoding = "utf-8"
+    model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8")
 
 
 @lru_cache
