@@ -1,5 +1,5 @@
-<!--- INSERT BADGES HERE, added html style comments for visiblity (one line per badge)
---> ![Workflow status](https://github.com/workata/pyplate/actions/workflows/checks.yml/badge.svg) <!--
+<!--- INSERT BADGES HERE, added html style comments for visiblity (one line per badge)-->
+![Workflow status](https://github.com/workata/pyplate/actions/workflows/checks.yml/badge.svg) <!---
 --> <img src="imgs/badges/coverage.svg" alt="coverge-badge"> <!---
 --> <img src="imgs/badges/tests.svg" alt="pytest-badge"> <!---
 --> <img src="imgs/badges/flake.svg" alt="flake-badge"> <!---
