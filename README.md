@@ -1,5 +1,15 @@
-![Workflow status](https://github.com/workata/pyplate/actions/workflows/checks.yml/badge.svg) <img src="imgs/badges/coverage.svg" alt="coverge-badge"/> <img src="imgs/badges/tests.svg" alt="pytest-badge"/> <img src="imgs/badges/flake.svg" alt="flake-badge"/> ![PyPlate stars](https://img.shields.io/github/stars/workata/pyplate)
-
+<!--- INSERT BADGES HERE, added html style comments for visiblity (one line per badge)
+--> ![Workflow status](https://github.com/workata/pyplate/actions/workflows/checks.yml/badge.svg) <!--
+--> <img src="imgs/badges/coverage.svg" alt="coverge-badge"> <!---
+--> <img src="imgs/badges/tests.svg" alt="pytest-badge"> <!---
+--> <img src="imgs/badges/flake.svg" alt="flake-badge"> <!---
+--> <img src="https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white&style=flat-square"
+height="20" alt="pre-commit"><!---
+--> <img src="https://img.shields.io/static/v1?label=code%20style&message=black&color=black&style=flat-square" height="20" alt="code style: black"> <!--
+--> <img src="https://img.shields.io/static/v1.svg?label=Contributions&message=Welcome&color=0059b3&style=flat-square" height="20" alt="Contributions Welcome"> <!--
+--> <img src="https://img.shields.io/github/repo-size/Workata/pyplate.svg?label=Repo%20size&style=flat-square" height="20"> <!--
+--> ![PyPlate stars](https://img.shields.io/github/stars/workata/pyplate) <!---
+-->
 
 
 <p align="center">
