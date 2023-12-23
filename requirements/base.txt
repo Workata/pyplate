@@ -1,5 +1,5 @@
 jupyter==1.0.0
 pydantic-settings==2.1.0
-pydantic[dotenv]==2.5.2
+pydantic[dotenv]==2.5.3
 python-dotenv==1.0.0
 PyYAML==6.0.1
