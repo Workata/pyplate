@@ -1,5 +1,5 @@
 name: "Action"
-description: "Metadata for github actions"
+description: "Point to .devcontainer dockerfile"
 runs:
   using: "docker"
-  image: "../Dockerfile"  # there is no way to set context here so I just move devcontainer Dockerfile to the project root dir
+  image: "../.devcontainer/Dockerfile"

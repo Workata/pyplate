@@ -16,9 +16,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Move Dockerfile from devcontainer
-      run: mv ./.devcontainer/Dockerfile ./Dockerfile
-
     - name: Set docker image from devcontainer
       uses: ./.github/
 
