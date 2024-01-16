@@ -12,9 +12,21 @@ on:
 jobs:
   checks:
     runs-on: ubuntu-latest
+    # runs:
+    #   using: 'docker'
 
     steps:
     - uses: actions/checkout@v3
+
+    # - name: Build
+      # uses: "docker"
+      # image: "../.devcontainer/Dockerfile"
+      # uses: docker/build-push-action@v5
+      # with:
+      #   context: .
+      #   build-contexts: |
+      #     alpine=docker-image://alpine:3.16
+      #   tags: myimage:latest
 
     - name: Set docker image from devcontainer
       uses: ./.github/

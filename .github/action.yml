@@ -3,3 +3,4 @@ description: "Point to .devcontainer dockerfile"
 runs:
   using: "docker"
   image: "../.devcontainer/Dockerfile"
+  context: ".."
