@@ -31,7 +31,7 @@ jobs:
     - name: Set docker image from devcontainer
       uses: ./.github/
       with:
-        context: ..
+        context: .
 
     - name: Install dependencies
       run: |
