@@ -18,46 +18,45 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    # - name: Build
-      # uses: "docker"
-      # image: "../.devcontainer/Dockerfile"
-      # uses: docker/build-push-action@v5
-      # with:
-      #   context: .
-      #   build-contexts: |
-      #     alpine=docker-image://alpine:3.16
-      #   tags: myimage:latest
+    - name: Build and run compose for testing
+      run: docker-compose -f ./.github/docker-compose.testing.yml up
 
-    - name: Set docker image from devcontainer
-      uses: ./.github/
-      with:
-        context: ..
+    - name: Run linter
+      run: docker exec -it app-name-pipeline-container flake8 src/
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements/dev.txt
+    - name: Down compose
+      run: docker-compose -f ./.github/docker-compose.testing.yml down
 
-    - name: Run pre-commit related checks   # black, flake8, mypy and built in checks
-      run: pre-commit run --all-files
+    # - name: Set docker image from devcontainer
+    #   uses: ./.github/
+    #   with:
+    #     context: ..
 
-    - name: Test with PyTest
-      run: coverage run -m pytest ./src/ --junitxml=junit.xml
+    # - name: Install dependencies
+    #   run: |
+    #     python -m pip install --upgrade pip
+    #     pip install -r requirements/dev.txt
 
-    - name: Check coverage with coverage.py
-      run: |
-        coverage report -m
-        coverage xml
+    # - name: Run pre-commit related checks   # black, flake8, mypy and built in checks
+    #   run: pre-commit run --all-files
 
-    - name: Create badges and add them to repo
-      run: |
-        genbadge coverage --input-file=coverage.xml --output-file=imgs/badges/coverage.svg
-        genbadge tests --input-file=junit.xml --output-file=imgs/badges/tests.svg
-        genbadge flake8 --input-file=flake8stats.txt --output-file=imgs/badges/flake.svg
+    # - name: Test with PyTest
+    #   run: coverage run -m pytest ./src/ --junitxml=junit.xml
 
-        git config --global user.name "github-actions[bot]"
-        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+    # - name: Check coverage with coverage.py
+    #   run: |
+    #     coverage report -m
+    #     coverage xml
 
-        git add imgs/badges/
-        git commit -m "Update badges" || echo "No changes to commit"
-        git push
+    # - name: Create badges and add them to repo
+    #   run: |
+    #     genbadge coverage --input-file=coverage.xml --output-file=imgs/badges/coverage.svg
+    #     genbadge tests --input-file=junit.xml --output-file=imgs/badges/tests.svg
+    #     genbadge flake8 --input-file=flake8stats.txt --output-file=imgs/badges/flake.svg
+
+    #     git config --global user.name "github-actions[bot]"
+    #     git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+    #     git add imgs/badges/
+    #     git commit -m "Update badges" || echo "No changes to commit"
+    #     git push
