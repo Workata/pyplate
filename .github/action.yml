@@ -1,5 +1,0 @@
-name: "Action"
-description: "Point to .devcontainer dockerfile -- github action metadata"
-runs:
-  using: "docker"
-  image: "../.devcontainer/Dockerfile"

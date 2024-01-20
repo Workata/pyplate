@@ -12,20 +12,23 @@ on:
 jobs:
   checks:
     runs-on: ubuntu-latest
-    # runs:
-    #   using: 'docker'
 
     steps:
     - uses: actions/checkout@v3
 
-    - name: Build and run compose for testing
-      run: docker-compose -f ./.github/docker-compose.testing.yml up -d
+    - name: prep phase
+      run: |
+        DEVCONTAINER_COMPOSE_PATH="./.devcontainer/docker-compose.devcontainer.build.yml"
+        alias execute="docker exec app-name-container"
 
-    - name: Run linter
-      run: docker exec app-name-pipeline-container flake8 src/
+    - name: build and run compose for testing
+      run: docker-compose -f $DEVCONTAINER_COMPOSE_PATH up -d
+
+    - name: run linter
+      run: execute flake8 src/
 
     - name: Down compose
-      run: docker-compose -f ./.github/docker-compose.testing.yml down
+      run: docker-compose -f $DEVCONTAINER_COMPOSE_PATH down
 
     # - name: Set docker image from devcontainer
     #   uses: ./.github/

@@ -7,4 +7,5 @@ services:
     build:
       context: ..
       dockerfile: .devcontainer/Dockerfile
+    tty: true   # * will keep container running so we can execute commands on it -- this is needed for testing in pipeline
     container_name: app-name-container
