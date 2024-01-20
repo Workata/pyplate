@@ -22,7 +22,7 @@ jobs:
       run: docker-compose -f ./.github/docker-compose.testing.yml up -d
 
     - name: Run linter
-      run: docker exec -it app-name-pipeline-container flake8 src/
+      run: docker exec app-name-pipeline-container flake8 src/
 
     - name: Down compose
       run: docker-compose -f ./.github/docker-compose.testing.yml down
