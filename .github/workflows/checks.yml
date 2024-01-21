@@ -23,10 +23,14 @@ jobs:
     - name: build and run compose for testing
       run: docker-compose -f $DEVCONTAINER_COMPOSE_PATH up -d
 
-    - name: run pre-commit related checks   # black, flake8, mypy and built in checks
-      run: |
-        git config --global --add safe.directory '*'
-        $EXECUTE_IN_CONTAINER pre-commit run --all-files
+    - name: check formatter (black)
+      run: $EXECUTE_IN_CONTAINER black src/ --check --diff --color
+
+    - name: check linter (flake8)
+      run: $EXECUTE_IN_CONTAINER flake8 src/ --statistics --tee --output-file=flake8stats.txt
+
+    - name: check typing (mypy)
+      run: $EXECUTE_IN_CONTAINER mypy src/
 
     - name: test with pytest
       run: $EXECUTE_IN_CONTAINER coverage run -m pytest ./src/ --junitxml=junit.xml
