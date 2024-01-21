@@ -21,6 +21,7 @@ repos:
     hooks:
     -   id: black
         files: src/
+        args: [--diff, --color, --check]     # pre commit checks will run in pipeline so we dont want to automatically format code with black
 
 -   repo: https://github.com/pycqa/flake8
     rev: '6.1.0'  # pick a git hash / tag to point to

@@ -23,32 +23,29 @@ jobs:
     - name: build and run compose for testing
       run: docker-compose -f $DEVCONTAINER_COMPOSE_PATH up -d
 
-    - name: run linter
-      run: $EXECUTE_IN_CONTAINER flake8 src/
+    - name: run pre-commit related checks   # black, flake8, mypy and built in checks
+      run: $EXECUTE_IN_CONTAINER pre-commit run --all-files
+
+    - name: test with pytest
+      run: $EXECUTE_IN_CONTAINER coverage run -m pytest ./src/ --junitxml=junit.xml
+
+    - name: check coverage with coveragepy
+      run: |
+        $EXECUTE_IN_CONTAINER coverage report -m
+        $EXECUTE_IN_CONTAINER coverage xml
+
+    - name: create badges and add them to repo
+      run: |
+        $EXECUTE_IN_CONTAINER genbadge coverage --input-file=coverage.xml --output-file=imgs/badges/coverage.svg
+        $EXECUTE_IN_CONTAINER genbadge tests --input-file=junit.xml --output-file=imgs/badges/tests.svg
+        $EXECUTE_IN_CONTAINER genbadge flake8 --input-file=flake8stats.txt --output-file=imgs/badges/flake.svg
+
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+        git add imgs/badges/
+        git commit -m "Update badges" || echo "No changes to commit"
+        git push
 
     - name: Down compose
       run: docker-compose -f $DEVCONTAINER_COMPOSE_PATH down
-
-    # - name: Run pre-commit related checks   # black, flake8, mypy and built in checks
-    #   run: pre-commit run --all-files
-
-    # - name: Test with PyTest
-    #   run: coverage run -m pytest ./src/ --junitxml=junit.xml
-
-    # - name: Check coverage with coverage.py
-    #   run: |
-    #     coverage report -m
-    #     coverage xml
-
-    # - name: Create badges and add them to repo
-    #   run: |
-    #     genbadge coverage --input-file=coverage.xml --output-file=imgs/badges/coverage.svg
-    #     genbadge tests --input-file=junit.xml --output-file=imgs/badges/tests.svg
-    #     genbadge flake8 --input-file=flake8stats.txt --output-file=imgs/badges/flake.svg
-
-    #     git config --global user.name "github-actions[bot]"
-    #     git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-    #     git add imgs/badges/
-    #     git commit -m "Update badges" || echo "No changes to commit"
-    #     git push
