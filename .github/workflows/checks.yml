@@ -24,7 +24,9 @@ jobs:
       run: docker-compose -f $DEVCONTAINER_COMPOSE_PATH up -d
 
     - name: run pre-commit related checks   # black, flake8, mypy and built in checks
-      run: $EXECUTE_IN_CONTAINER pre-commit run --all-files
+      run: |
+        $EXECUTE_IN_CONTAINER git init
+        $EXECUTE_IN_CONTAINER pre-commit run --all-files
 
     - name: test with pytest
       run: $EXECUTE_IN_CONTAINER coverage run -m pytest ./src/ --junitxml=junit.xml
