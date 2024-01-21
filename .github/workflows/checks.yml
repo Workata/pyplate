@@ -13,32 +13,21 @@ jobs:
   checks:
     runs-on: ubuntu-latest
 
+    env:
+      DEVCONTAINER_COMPOSE_PATH: ./.devcontainer/docker-compose.devcontainer.build.yml
+      EXECUTE_IN_CONTAINER: docker exec app-name-container
+
     steps:
     - uses: actions/checkout@v3
-
-    - name: prep phase
-      run: |
-        DEVCONTAINER_COMPOSE_PATH="./.devcontainer/docker-compose.devcontainer.build.yml"
-        alias execute="docker exec app-name-container"
 
     - name: build and run compose for testing
       run: docker-compose -f $DEVCONTAINER_COMPOSE_PATH up -d
 
     - name: run linter
-      run: execute flake8 src/
+      run: $EXECUTE_IN_CONTAINER flake8 src/
 
     - name: Down compose
       run: docker-compose -f $DEVCONTAINER_COMPOSE_PATH down
-
-    # - name: Set docker image from devcontainer
-    #   uses: ./.github/
-    #   with:
-    #     context: ..
-
-    # - name: Install dependencies
-    #   run: |
-    #     python -m pip install --upgrade pip
-    #     pip install -r requirements/dev.txt
 
     # - name: Run pre-commit related checks   # black, flake8, mypy and built in checks
     #   run: pre-commit run --all-files
