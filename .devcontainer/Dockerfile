@@ -1,6 +1,6 @@
 FROM python:3.12-rc
 
-RUN apt-get update
+RUN apt update && apt install -y --no-install-recommends git
 
 WORKDIR /workspace
 
