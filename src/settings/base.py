@@ -7,8 +7,8 @@ from .components.logging import logging_settings
 
 
 class Settings(BaseSettings):
-    environment: str
-    debug: bool
+    environment: str = "dev"
+    debug: bool = False
     logging: Dict[str, Any] = logging_settings
 
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8")
