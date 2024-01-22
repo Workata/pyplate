@@ -35,7 +35,7 @@ jobs:
     - name: test with pytest
       run: $EXECUTE_IN_CONTAINER coverage run -m pytest ./src/ --junitxml=junit.xml
 
-    - name: check coverage with coveragepy
+    - name: check coverage with coveragepy    # also build an xml report for badge
       run: |
         $EXECUTE_IN_CONTAINER coverage report -m
         $EXECUTE_IN_CONTAINER coverage xml

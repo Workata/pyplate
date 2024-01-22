@@ -23,14 +23,13 @@ repos:
         files: src/
 
 -   repo: https://github.com/pycqa/flake8
-    rev: '6.1.0'  # pick a git hash / tag to point to
+    rev: '6.1.0'
     hooks:
     -   id: flake8
         files: src/
-        args: [--statistics, --tee, --output-file=flake8stats.txt]
 
 -   repo: https://github.com/pre-commit/mirrors-mypy
-    rev: 'v1.7.0'  # Use the sha / tag you want to point at
+    rev: 'v1.8.0'
     hooks:
     -   id: mypy
         files: src/
