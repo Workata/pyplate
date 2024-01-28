@@ -1,7 +1,7 @@
 -r base.txt
 assertpy==1.1
-black[jupyter]==23.12.1
-coverage==7.4.0
+black[jupyter]==24.1.0
+coverage==7.4.1
 flake8==7.0.0
 genbadge[all]==1.1.1
 mypy==1.8.0
