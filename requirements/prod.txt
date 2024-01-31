@@ -1,0 +1,4 @@
+-r base.txt
+
+# most likely you will only need base libs here but sometimes it may be
+# necessary to include for example lib related with deployment (like pyngrok)
