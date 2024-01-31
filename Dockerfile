@@ -5,9 +5,9 @@ RUN apt-get update
 WORKDIR /workspace
 
 # * install needed libs
-COPY requirements/base.txt requirements/base.txt
+COPY requirements/ requirements/
 RUN pip install --upgrade pip
-RUN pip3 install -r requirements/base.txt
+RUN pip3 install -r requirements/prod.txt
 
 COPY ./src ./
 CMD ["python", "./main.py"]
