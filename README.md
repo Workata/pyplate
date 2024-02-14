@@ -13,7 +13,7 @@ height="20" alt="pre-commit"><!---
 
 
 <p align="center">
-  <img src="imgs/pyplate_logo.png" width="290" height="290" alt="pyplate logo"/>
+  <img src="imgs/pyplate_logo_v2.png" width="320" height="320" alt="pyplate logo"/>
 </p>
 
 
