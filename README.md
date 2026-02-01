@@ -1,15 +1,12 @@
-<!--- INSERT BADGES HERE, added html style comments for visiblity (one line per badge)-->
-![Workflow status](https://github.com/workata/pyplate/actions/workflows/checks.yml/badge.svg) <!---
---> <img src="imgs/badges/coverage.svg" alt="coverge-badge"> <!---
---> <img src="imgs/badges/tests.svg" alt="pytest-badge"> <!---
---> <img src="imgs/badges/flake.svg" alt="flake-badge"> <!---
---> <img src="https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white&style=flat-square"
-height="20" alt="pre-commit"><!---
---> <img src="https://img.shields.io/static/v1?label=code%20style&message=black&color=black&style=flat-square" height="20" alt="code style: black"> <!--
---> <img src="https://img.shields.io/static/v1.svg?label=Contributions&message=Welcome&color=0059b3&style=flat-square" height="20" alt="Contributions Welcome"> <!--
---> <img src="https://img.shields.io/github/repo-size/Workata/pyplate.svg?label=Repo%20size&style=flat-square" height="20"> <!--
---> ![PyPlate stars](https://img.shields.io/github/stars/workata/pyplate) <!---
--->
+[![Python 3.14](https://img.shields.io/badge/python-3.14-blue.svg)](https://www.python.org/downloads/release/python-314/)
+[![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json)](https://github.com/astral-sh/uv)
+[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
+[![ty](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ty/main/assets/badge/v0.json)](https://github.com/astral-sh/ty)
+[![prek](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/j178/prek/master/docs/assets/badge-v0.json)](https://github.com/j178/prek)
+[![security: bandit](https://img.shields.io/badge/security-bandit-yellow.svg)](https://github.com/PyCQA/bandit)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![Contributions](https://img.shields.io/static/v1.svg?label=Contributions&message=Welcome&color=0059b3&style=flat-square)
+![PyPlate stars](https://img.shields.io/github/stars/workata/pyplate)
 
 
 <p align="center">

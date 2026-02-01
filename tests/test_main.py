@@ -1,5 +1,6 @@
-from unittest.mock import patch, MagicMock
-from main import main
+from unittest.mock import MagicMock, patch
+
+from pyplate.main import main
 
 
 @patch("builtins.print")

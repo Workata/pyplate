@@ -2,56 +2,29 @@ name: checks
 
 on:
   push:
-    paths-ignore:
-      - '**/README.md'
-      - 'scripts/*'
-      - 'imgs/*'
-      - 'LICENSE'
-      - '.env.example'
+    paths:
+      - '**.py'
+      - '.github/workflows/**'
+      - 'pic_back/**'
+      - 'caddy/**'
+      - '**/Dockerfile'
+      - '.python-version'
 
 jobs:
+  # every branch
   checks:
-    runs-on: ubuntu-latest
-
     env:
-      DEVCONTAINER_COMPOSE_PATH: ./.devcontainer/docker-compose.devcontainer.build.yml
-      EXECUTE_IN_CONTAINER: docker exec app-name-container
-
+      EXECUTE_IN_CONTAINER: docker run --env-file ./tests/.env.test pyplate-test-image:latest
+    runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+      - name: Check out code
+        uses: actions/checkout@v5
 
-    - name: build and run compose for testing
-      run: docker-compose -f $DEVCONTAINER_COMPOSE_PATH up -d
+      - name: Build docker test image
+        run: docker build -f ./.github/workflows/Dockerfile . --tag pyplate-test-image
 
-    - name: check formatter (black)
-      run: $EXECUTE_IN_CONTAINER black src/ --check --diff --color
+      - name: Run static checks via prek
+        run:  $EXECUTE_IN_CONTAINER uv run prek run --all-files
 
-    - name: check linter (flake8)
-      run: $EXECUTE_IN_CONTAINER flake8 src/ --statistics --tee --output-file=flake8stats.txt
-
-    - name: check typing (mypy)
-      run: $EXECUTE_IN_CONTAINER mypy src/
-
-    - name: test with pytest
-      run: $EXECUTE_IN_CONTAINER coverage run -m pytest ./src/ --junitxml=junit.xml
-
-    - name: check coverage with coveragepy    # also build an xml report for badge
-      run: |
-        $EXECUTE_IN_CONTAINER coverage report -m
-        $EXECUTE_IN_CONTAINER coverage xml
-
-    - name: create badges and add them to repo
-      run: |
-        $EXECUTE_IN_CONTAINER genbadge coverage --input-file=coverage.xml --output-file=imgs/badges/coverage.svg
-        $EXECUTE_IN_CONTAINER genbadge tests --input-file=junit.xml --output-file=imgs/badges/tests.svg
-        $EXECUTE_IN_CONTAINER genbadge flake8 --input-file=flake8stats.txt --output-file=imgs/badges/flake.svg
-
-        git config --global user.name "github-actions[bot]"
-        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-        git add imgs/badges/
-        git commit -m "Update badges" || echo "No changes to commit"
-        git push
-
-    - name: Down compose
-      run: docker-compose -f $DEVCONTAINER_COMPOSE_PATH down
+      - name: Run unit tests
+        run: $EXECUTE_IN_CONTAINER uv run pytest --cov=pyplate

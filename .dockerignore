@@ -1,1 +1,30 @@
-src/tests/
+.mypy_cache
+.pytest_cache
+.ruff_cache
+.venv
+*venv
+.vscode
+.coverage
+.env.example
+.gitignore
+
+# needed for test docker image
+# tests
+# .pre-commit-config.yaml
+
+dump
+*.log
+private
+data
+!data/token.json
+
+docker-compose.yml
+Dockerfile
+Makefile
+LICENSE
+
+*_cache
+*.md
+*.json
+
+.dockerignore

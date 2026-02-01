@@ -8,6 +8,4 @@ COPY --from=ghcr.io/astral-sh/uv:0.9.8 /uv /uvx /bin/
 COPY . .
 
 # sync packages (without dev)
-RUN uv sync --no-dev
-
-CMD ["uv", "run", "python3", "", "./pyplate/main.py"]
+RUN uv sync
