@@ -1,7 +1,9 @@
-import pytest
-from pyplate.settings import Settings, get_settings
 from pathlib import Path
+
+import pytest
 from dotenv import load_dotenv
+
+from pyplate.settings import Settings, get_settings
 
 
 @pytest.fixture(scope="session", autouse=True)
