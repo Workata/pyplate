@@ -1,37 +1,43 @@
-# See https://pre-commit.com for more information
-# See https://pre-commit.com/hooks.html for more hooks
 
-# ! doesn't include pytest/coveragepy
 repos:
--   repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v3.2.0
+  - repo: builtin
     hooks:
-    -   id: trailing-whitespace       # ? trims trailing whitespace
-        exclude: (imgs|.devcontainer)/.*
-    -   id: end-of-file-fixer         # ? ensures that a file is either empty, or ends with one newline
-        exclude: (imgs|.devcontainer)/.*
-    -   id: check-yaml                # ? checks yaml files for parseable syntax
-    -   id: check-added-large-files   # ? check-added-large-files
-    -   id: check-toml                # ? checks toml files for parseable syntax
-    -   id: requirements-txt-fixer    # ? sorts entries in requirements.txt
-    -   id: detect-private-key        # ? detects the presence of private keys
+    - id: trailing-whitespace       # ? trims trailing whitespace
+    - id: end-of-file-fixer         # ? ensures that a file is either empty, or ends with one newline
+    - id: check-yaml                # ? checks yaml files for parseable syntax
+    - id: check-added-large-files   # ? check-added-large-files
+    - id: check-toml                # ? checks toml files for parseable syntax
+    - id: detect-private-key        # ? detects the presence of private keys
 
--   repo: https://github.com/psf/black
-    rev: 23.9.1
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.14.5
     hooks:
-    -   id: black
-        files: src/
+      # run linter + fix if possible
+      - id: ruff-check
+        args: [ --fix ]
+      # Run formatter
+      - id: ruff-format
 
--   repo: https://github.com/pycqa/flake8
-    rev: '6.1.0'
+  # run ty via local repo, there are no pre-commit hooks for ty yet
+  - repo: local
     hooks:
-    -   id: flake8
-        files: src/
+      - id: ty
+        name: ty
+        entry: uvx ty check
+        language: system
+        types: [python]
+        require_serial: true
+        exclude: tests        # verify why exclude doesn't come from pyproject.toml config
 
--   repo: https://github.com/pre-commit/mirrors-mypy
-    rev: 'v1.8.0'
+  - repo: https://github.com/PyCQA/bandit
+    rev: '1.9.2'
     hooks:
-    -   id: mypy
-        files: src/
-        exclude: ^src/tests/
-        additional_dependencies: [types-PyYAML==6.0.12.11]
+      - id: bandit
+        name: bandit
+        description: 'Bandit is a tool for finding common security issues in Python code'
+        args: ["-c", "pyproject.toml", "-r", "./pic_back/"]
+        language: python
+        language_version: python3
+        types: [python]
+        require_serial: true
+        additional_dependencies: ["bandit[toml]"]

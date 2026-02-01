@@ -12,6 +12,4 @@ RUN apt-get update && \
 COPY . .
 
 # sync packages (without dev)
-RUN uv sync --no-dev
-
-CMD ["uv", "run", "--no-sync", "python3", "./pyplate/main.py"]
+RUN uv sync

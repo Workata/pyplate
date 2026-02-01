@@ -1,8 +1,6 @@
-version: "3.8"
-
 services:
-  app-name-service:
-    container_name: app-name-container
+  pyplate-service:
+    container_name: pyplate-container
     build: ./
     env_file:
       - .env
