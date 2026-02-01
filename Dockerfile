@@ -14,4 +14,4 @@ COPY . .
 # sync packages (without dev)
 RUN uv sync --no-dev
 
-CMD ["uv", "run", "python3", "", "./pyplate/main.py"]
+CMD ["uv", "run", "--no-sync", "python3", "./pyplate/main.py"]
