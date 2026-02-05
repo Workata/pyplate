@@ -1,0 +1,27 @@
+{
+  "branchPrefix": "renovate/",
+  "dryRun": "full",
+  "username": "renovate-release",
+  "gitAuthor": "Renovate Bot <bot@renovateapp.com>",
+  "onboarding": false,
+  "platform": "github",
+  "forkProcessing": "enabled",
+  "repositories": [
+    "workata/pyplate"
+  ],
+  "packageRules": [
+    {
+      "description": "lockFileMaintenance",
+      "matchUpdateTypes": [
+        "pin",
+        "digest",
+        "patch",
+        "minor",
+        "major",
+        "lockFileMaintenance"
+      ],
+      "dependencyDashboardApproval": false,
+      "minimumReleaseAge": "1 day"
+    }
+  ]
+}
