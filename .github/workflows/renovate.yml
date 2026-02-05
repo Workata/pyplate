@@ -2,6 +2,7 @@ name: Renovate
 on:
   schedule:
     - cron: '0/15 * * * *'
+  workflow_dispatch:
 
 # https://github.com/renovatebot/renovate
 # https://github.com/renovatebot/github-action
