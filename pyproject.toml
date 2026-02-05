@@ -5,7 +5,7 @@ description = "Python project template"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
-    "pydantic==2.12.4",
+    "pydantic==2.12.5",
     "pydantic-settings==2.11.0",
 ]
 
