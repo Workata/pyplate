@@ -1,12 +1,12 @@
 name: Renovate
 on:
   schedule:
-    # The "*" (#42, asterisk) character has special semantics in YAML, so this
-    # string has to be quoted.
     - cron: '0/15 * * * *'
 
-
+# https://github.com/renovatebot/renovate
+# https://github.com/renovatebot/github-action
 # https://docs.renovatebot.com/self-hosted-configuration/
+
 jobs:
   renovate:
     runs-on: ubuntu-latest
