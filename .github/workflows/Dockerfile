@@ -1,4 +1,4 @@
-FROM python:3.14.0-slim-trixie
+FROM python:3.14.3-slim-trixie
 
 # * install uv
 # * https://docs.astral.sh/uv/guides/integration/docker/#installing-uv
