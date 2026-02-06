@@ -15,7 +15,7 @@ dev = [
     "prek>=0.2.30",
     "pytest==8.4.2",
     "pytest-cov==7.0.0",
-    "ruff==0.14.14",
+    "ruff==0.15.0",
     "ty>=0.0.14",
     "python-dotenv==1.2.1",
 ]
