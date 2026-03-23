@@ -14,7 +14,7 @@ dev = [
     "bandit[toml]==1.9.3",
     "prek>=0.2.30",
     "pytest==9.0.2",
-    "pytest-cov==7.0.0",
+    "pytest-cov==7.1.0",
     "ruff==0.15.1",
     "ty>=0.0.14",
     "python-dotenv==1.2.1",
