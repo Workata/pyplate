@@ -13,7 +13,7 @@ dependencies = [
 dev = [
     "bandit[toml]==1.9.4",
     "prek>=0.2.30",
-    "pytest==9.0.2",
+    "pytest==9.0.3",
     "pytest-cov==7.1.0",
     "ruff==0.15.1",
     "ty>=0.0.14",
