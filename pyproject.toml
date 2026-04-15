@@ -17,7 +17,7 @@ dev = [
     "pytest-cov==7.1.0",
     "ruff==0.15.1",
     "ty>=0.0.14",
-    "python-dotenv==1.2.1",
+    "python-dotenv==1.2.2",
 ]
 
 
