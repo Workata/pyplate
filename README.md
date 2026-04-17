@@ -45,7 +45,6 @@ This template project uses devcontainer (VS code) to setup everything. So just f
 ### Requirements
 
 - **[uv](https://docs.astral.sh/uv/getting-started/installation/)** - python project manager (*required*)
-- **[make](https://www.gnu.org/software/make/manual/make.html)** - makefile, running commands (*recommended*)
 
 ### Setup
 
@@ -91,12 +90,12 @@ On every commit code should be static tested/checked/formatted automatically (us
 
 You can run static checks using
 ```sh
-make check
+just check
 ```
 
 To run unit tests use
 ```sh
-make test
+just test
 ```
 
 <!-- ## Update packages

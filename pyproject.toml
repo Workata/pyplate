@@ -15,27 +15,12 @@ dev = [
     "prek>=0.2.30",
     "pytest==9.0.3",
     "pytest-cov==7.1.0",
-    "ruff==0.15.1",
+    "ruff==0.15.11",
     "ty>=0.0.14",
     "python-dotenv==1.2.1",
+    "rust-just==1.49.0",
 ]
 
-
-[tool.mypy]
-
-ignore_missing_imports = true
-check_untyped_defs = true
-disallow_untyped_defs = true
-disallow_incomplete_defs = true
-disallow_untyped_decorators = true
-disallow_any_unimported = false
-warn_return_any = true
-warn_unused_ignores = true
-no_implicit_optional = true
-show_error_codes = true
-disable_error_code = ["prop-decorator"]
-
-exclude = ["tests", ".venv", "venv", "data", "private", "dump"]
 
 
 [tool.ruff]
@@ -73,8 +58,6 @@ exclude = [
 # Same as Black
 line-length = 120
 indent-width = 4
-
-target-version = "py314"
 
 
 [tool.ruff.lint]
