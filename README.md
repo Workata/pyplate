@@ -29,8 +29,18 @@ Template for a standard (non-framework related) python project. The point of thi
 - **[pydantic](https://docs.pydantic.dev/latest/)** (data validation, models)
 - **[pydantic-settings](https://docs.pydantic.dev/latest/concepts/pydantic_settings/)** (settings management)
 - **[prek](https://prek.j178.dev/)** (git hooks, running checks)
+- **[just](https://github.com/casey/just)** (command runner* - easily run tests/checks/application) - *optional*
 <!-- - **[devcontainer](https://code.visualstudio.com/docs/devcontainers/containers)** (development inside container) -->
 
+---
+
+\* to enable autocompletion of declared commands follow [the docs](https://github.com/casey/just#shell-completion-scripts). For Ubuntu with bash do the following:
+
+```sh
+sudo apt install bash-completion
+mkdir -p ~/.local/share/bash-completion/completions
+just --completions bash > ~/.local/share/bash-completion/completions/just
+```
 
 ## Development
 
@@ -45,7 +55,6 @@ This template project uses devcontainer (VS code) to setup everything. So just f
 ### Requirements
 
 - **[uv](https://docs.astral.sh/uv/getting-started/installation/)** - python project manager (*required*)
-- **[make](https://www.gnu.org/software/make/manual/make.html)** - makefile, running commands (*recommended*)
 
 ### Setup
 
@@ -59,7 +68,15 @@ Verify uv installation
 uv --version
 ```
 
+After the uv installation you can init the setup
+```sh
+uv sync
+uv run just init
+```
+or simply `just init` if you have `just` installed.
+
 ---
+To setup the project manually check the following:
 
 Copy example env file
 ```sh
@@ -76,7 +93,6 @@ Activate venv
 . ./.venv/bin/activate
 ```
 
-
 ### Enable Prek - pre-commit git hook
 [prek](https://prek.j178.dev/) configuration is enabled for this project. To run the hooks every time you commit, install prek’s git hook integration:
 
@@ -91,12 +107,12 @@ On every commit code should be static tested/checked/formatted automatically (us
 
 You can run static checks using
 ```sh
-make check
+just check
 ```
 
 To run unit tests use
 ```sh
-make test
+just test
 ```
 
 <!-- ## Update packages

@@ -1,6 +1,7 @@
 .mypy_cache
 .pytest_cache
 .ruff_cache
+*cache
 .venv
 *venv
 .vscode
@@ -20,7 +21,7 @@ data
 
 docker-compose.yml
 Dockerfile
-Makefile
+justfile
 LICENSE
 
 *_cache
