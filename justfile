@@ -1,3 +1,10 @@
+init:
+	@echo "Initialize project setup"
+	cp -n .env.example .env
+	uv --version
+	uv sync
+	uv run prek install
+
 check:
 	@echo "Running static checks via prek (pre-commit hook)..."
 	uv run prek run --all-files

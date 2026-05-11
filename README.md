@@ -68,7 +68,15 @@ Verify uv installation
 uv --version
 ```
 
+After the uv installation you can init the setup
+```sh
+uv sync
+uv run just init
+```
+or simply `just init` if you have `just` installed.
+
 ---
+To setup the project manually check the following:
 
 Copy example env file
 ```sh
@@ -84,7 +92,6 @@ Activate venv
 ```sh
 . ./.venv/bin/activate
 ```
-
 
 ### Enable Prek - pre-commit git hook
 [prek](https://prek.j178.dev/) configuration is enabled for this project. To run the hooks every time you commit, install prek’s git hook integration:
