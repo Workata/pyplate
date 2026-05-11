@@ -29,9 +29,18 @@ Template for a standard (non-framework related) python project. The point of thi
 - **[pydantic](https://docs.pydantic.dev/latest/)** (data validation, models)
 - **[pydantic-settings](https://docs.pydantic.dev/latest/concepts/pydantic_settings/)** (settings management)
 - **[prek](https://prek.j178.dev/)** (git hooks, running checks)
-- **[just](https://github.com/casey/just)** ()
+- **[just](https://github.com/casey/just)** (command runner* - easily run tests/checks/application) - *optional*
 <!-- - **[devcontainer](https://code.visualstudio.com/docs/devcontainers/containers)** (development inside container) -->
 
+---
+
+\* to enable autocompletion of declared commands follow [the docs](https://github.com/casey/just#shell-completion-scripts). For Ubuntu with bash do the following:
+
+```sh
+sudo apt install bash-completion
+mkdir -p ~/.local/share/bash-completion/completions
+just --completions bash > ~/.local/share/bash-completion/completions/just
+```
 
 ## Development
 
