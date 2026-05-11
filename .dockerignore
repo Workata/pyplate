@@ -20,7 +20,7 @@ data
 
 docker-compose.yml
 Dockerfile
-Makefile
+justfile
 LICENSE
 
 *_cache

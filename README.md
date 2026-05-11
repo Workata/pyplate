@@ -29,6 +29,7 @@ Template for a standard (non-framework related) python project. The point of thi
 - **[pydantic](https://docs.pydantic.dev/latest/)** (data validation, models)
 - **[pydantic-settings](https://docs.pydantic.dev/latest/concepts/pydantic_settings/)** (settings management)
 - **[prek](https://prek.j178.dev/)** (git hooks, running checks)
+- **[just](https://github.com/casey/just)** ()
 <!-- - **[devcontainer](https://code.visualstudio.com/docs/devcontainers/containers)** (development inside container) -->
 
 
@@ -45,7 +46,6 @@ This template project uses devcontainer (VS code) to setup everything. So just f
 ### Requirements
 
 - **[uv](https://docs.astral.sh/uv/getting-started/installation/)** - python project manager (*required*)
-- **[make](https://www.gnu.org/software/make/manual/make.html)** - makefile, running commands (*recommended*)
 
 ### Setup
 
@@ -91,12 +91,12 @@ On every commit code should be static tested/checked/formatted automatically (us
 
 You can run static checks using
 ```sh
-make check
+just check
 ```
 
 To run unit tests use
 ```sh
-make test
+just test
 ```
 
 <!-- ## Update packages
