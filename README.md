@@ -34,8 +34,9 @@ Template for a standard (non-framework related) python project. The point of thi
 
 ---
 
-\* to enable autocompletion of declared commands follow [the docs](https://github.com/casey/just#shell-completion-scripts). For Ubuntu with bash do the following:
+\* to enable autocompletion of declared commands follow [the docs](https://github.com/casey/just#shell-completion-scripts).
 
+For Ubuntu with bash do the following:
 ```sh
 sudo apt install bash-completion
 mkdir -p ~/.local/share/bash-completion/completions
@@ -73,7 +74,6 @@ After the uv installation you can init the setup
 uv sync
 uv run just init
 ```
-or simply `just init` if you have `just` installed.
 
 ---
 To setup the project manually check the following:
@@ -105,15 +105,32 @@ prek install
 
 On every commit code should be static tested/checked/formatted automatically (using [pre-commit](https://pre-commit.com/) tool).
 
+> [!NOTE]
+> You can skip `uv run` prefix if you have `just` installed globally.
+
 You can run static checks using
 ```sh
-just check
+uv run just check
 ```
 
 To run unit tests use
 ```sh
-just test
+uv run just test
 ```
+
+### Branch naming convention
+
+`<change-type>/<ticket-id>/<optional-short-description>`
+
+where `<change-type>` is:
+- feature
+- bugfix
+- misc
+
+examples:
+- feature/69/add-login-endpoint
+- bugfix/420/fix-data-scraper
+- misc/67/bump-pypspark-version
 
 <!-- ## Update packages
 You can manually run a script that will check for new versions of packages which are used in this project. It will update both requirements files (`base.txt`, `dev.txt`).

@@ -5,10 +5,11 @@ on:
     paths:
       - '**.py'
       - '.github/workflows/**'
-      - 'pic_back/**'
-      - 'caddy/**'
+      - 'pyplate/**'
       - '**/Dockerfile'
       - '.python-version'
+      - 'pyproject.toml'
+      - 'uv.lock'
 
 jobs:
   # every branch

@@ -21,6 +21,5 @@ LOGGING_CONFIG = {
             "handlers": ["console", "file"],
             "level": "INFO",
         },
-        "googleapiclient.discovery_cache": {"level": "WARNING"},
     },
 }

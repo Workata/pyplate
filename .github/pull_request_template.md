@@ -1,11 +1,16 @@
 ## Branch naming convention
 
-<issue_id>-<short_description>
+`<change-type>/<ticket-id>/<optional-short-description>`
 
-e.g.:
+where `<change-type>` is:
+- feature
+- bugfix
+- misc
 
-* 69-add-login-endpoint
-* 420-fix-data-scraper
+examples:
+- feature/69/add-login-endpoint
+- bugfix/420/fix-data-scraper
+- misc/67/bump-pypspark-version
 
 
 ## Checklist before requesting a review
